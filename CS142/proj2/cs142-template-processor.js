@@ -1,3 +1,4 @@
+'use strict'
 var assert = require('assert');
 function Cs142TemplateProcessor(template){
     this.template = template;
