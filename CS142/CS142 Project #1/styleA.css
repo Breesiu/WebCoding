@@ -1,0 +1,51 @@
+.Box{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between;
+    height: 100vh;
+    /* flex: 0 0 auto; */
+}   
+.firstBox{
+    background-color: #dfe1e7;
+    width: 100px;
+    height: 100px;
+    font-family: Tahoma;
+    font-size: 40px;
+    margin:0 auto;
+    text-align:center;//水平居中
+    margin-top: 2px;
+    border-top: 1px solid #687291;
+    flex: 0 0 auto;
+
+}
+.secondBox{
+    background-color: #eeeff2;
+    width: 100px;
+    height: 100px;
+    font-family: Tahoma;
+    font-size: 40px;
+    margin:0 auto;
+    text-align:center;//水平居中
+    margin-top: 2px;
+
+    Border-top: 1px solid #687291;
+    flex: 0 0 auto;
+
+    /* flex: 1 1 auto; */
+}
+.lastBox{
+    background-color: #687291;
+    width: 100px;
+    height: 100px;
+    font-family: Tahoma;
+    font-size: 40px;
+    margin:0 auto;
+    text-align:center;//水平居中
+    margin-top: 2px;
+
+    Border: 4px solid black;
+    flex: 0 0 auto;
+
+
+    /* flex: 1 1 auto; */
+}
