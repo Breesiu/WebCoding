@@ -1,0 +1,81 @@
+
+body {
+	background-color: #FFCE00;
+	font-family: 'Saira', Arial, Helvetica, sans-serif;
+}
+
+
+table{
+	position: relative;
+	width: 100%;
+	max-width: 320px;
+	height: 60px;
+	background-color: #FFF;
+	margin: 30px auto;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+
+	cursor: pointer;
+	user-select: none;
+}
+/* tbody{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+
+	background-color: #FFF;
+} */
+/* .tbl1 {
+	width: 100%;
+	background: #1abc9c;
+	color: white;
+} */
+
+.yearAndMonthNavi{
+	width: 100%;
+	height: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	color: #313131;
+	font-size: 28px;
+	
+}
+.dim {
+	/* text-align: center; */
+	color: gray;
+}
+.light {
+	/* text-align: center; */
+	color: black;
+}
+
+td .dim{ 
+	/* TODO: BUG!! .dim is OK but td.dim Not*/
+	/* color: gray; */
+
+	border: 1px solid red;
+	text-align: center;
+	text-align: justify;
+	text-justify: distribute-all-lines;
+	text-align-last: justify;
+	/* justify-content: center;
+	align-items: center;
+	color: #313131; */
+}
+td .light{ 
+	/* TODO: BUG!! .light is OK but td.light Not*/
+
+	/* color: black; */
+
+	border: 1px solid red;
+	text-align: center;
+	text-align: justify;
+	text-justify: distribute-all-lines;
+	text-align-last: justify;
+	/* justify-content: center;
+	align-items: center;
+	color: #313131; */
+}
