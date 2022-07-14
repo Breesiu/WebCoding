@@ -1,0 +1,19 @@
+/*
+CSS for the CS142 project #4 Problem #2 states component
+
+Since CSS uses a global name space for classes we should use names starting with
+cs142-states- here.
+*/
+
+.matchedStrings{
+    display: flex;
+    flex-direction: column; 
+    /* justify-content: space-between; */
+    height: 100vh;
+}
+
+.String {
+    height: 40px;
+    width: 50%;
+    font-size: 20pt;
+}
