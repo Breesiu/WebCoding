@@ -30,7 +30,7 @@ class UserDetail extends React.Component {
         </Grid>
         <Grid xs={4} item>
           <Button variant="contained" size="large" onClick={() => this.props.onClick()}>
-            <Link to={`/photos/${user._id}`}>See photos</Link>
+            <Link to={`/photos/${user._id}`}>See my photos!</Link>
           </Button>
         </Grid>
       </Grid>

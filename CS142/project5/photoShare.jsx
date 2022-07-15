@@ -26,6 +26,7 @@ class PhotoShare extends React.Component {
   handleUserChange(user){
     this.setState({
       user: user,
+      change: false,
     });
   }
   handleChange(){
@@ -73,7 +74,7 @@ class PhotoShare extends React.Component {
                 render={ props => <UserDetail {...props} change={this.state.change} onClick={() => this.handleChange()} />}
               />
               <Route path="/photos/:userId"
-                render ={ props => <UserPhotos {...props} change={this.state.change} /> }
+                render ={ props => <UserPhotos {...props} change={this.state.change} onClick={(user) => this.handleUserChange(user)} /> }
               />
               <Route path="/users" component={UserList}  />
             </Switch>
