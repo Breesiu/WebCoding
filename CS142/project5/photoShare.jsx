@@ -17,20 +17,41 @@ import UserPhotos from './components/userPhotos/userPhotos';
 class PhotoShare extends React.Component {
   constructor(props) {
     super(props);
-  }
 
+    this.state = {
+      user: '',
+      change: false, //false is show the info,  true is show the photos
+    };
+  }
+  handleUserChange(user){
+    this.setState({
+      user: user,
+    });
+  }
+  handleChange(){
+    if(this.state.change)
+      var change = false;
+    else
+      var change = true;
+    this.setState({
+      change : change,
+    });
+    console.log("Change" + this.state.change);
+  }
   render() {
+    console.log(this.state.user);
+    console.log("sd");
     return (
       <HashRouter>
       <div>
       <Grid container spacing={8}>
         <Grid item xs={12}>
-          <TopBar/>
+          <TopBar />
         </Grid>
         <div className="cs142-main-topbar-buffer"/>
         <Grid item sm={3}>
           <Paper className="cs142-main-grid-item">
-            <UserList />
+            <UserList onClick={user => this.handleUserChange(user)}/>
           </Paper>
         </Grid>
         <Grid item sm={9}>
@@ -49,10 +70,10 @@ class PhotoShare extends React.Component {
                 )}
               />
               <Route path="/users/:userId"
-                render={ props => <UserDetail {...props} /> }
+                render={ props => <UserDetail {...props} change={this.state.change} onClick={() => this.handleChange()} />}
               />
               <Route path="/photos/:userId"
-                render ={ props => <UserPhotos {...props} /> }
+                render ={ props => <UserPhotos {...props} change={this.state.change} /> }
               />
               <Route path="/users" component={UserList}  />
             </Switch>
