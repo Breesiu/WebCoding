@@ -29,8 +29,8 @@ class UserDetail extends React.Component {
           <Typography variant="body1">{user.description}</Typography>
         </Grid>
         <Grid xs={4} item>
-          <Button variant="contained" size="large" onClick={() => this.props.onClick()}>
-            <Link to={`/photos/${user._id}`}>See my photos!</Link>
+          <Button component={Link} to={`/photos/${user._id}`} variant="contained" size="large" onClick={() => this.props.onClick()}>
+            See my photos!
           </Button>
         </Grid>
       </Grid>

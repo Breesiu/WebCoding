@@ -3,7 +3,6 @@ import {
     Avatar, Button,
     Card,
     CardActions, CardContent, CardHeader, CardMedia,
-    Collapse, IconButton,
     ImageList, ImageListItem, List, ListItem, ListItemText,
     Typography
 } from '@material-ui/core';
@@ -11,7 +10,8 @@ import './userPhotos.css';
 import {Comment, ExpandMore, SportsHockey} from "@material-ui/icons";
 import {red} from "@material-ui/core/colors";
 import {Link} from "react-router-dom";
-
+//TODO: How to combine with link and button A:has be coped. use Button with component={Link}
+//TODO: How to remove the outer div, which will worse the experience of surfing website
 
 /**
  * Define UserPhotos, a React componment of CS142 project #5
@@ -42,7 +42,7 @@ class UserPhotos extends React.Component {
                             />
                             <CardMedia
                                 component="img"
-                                height="194"
+                                // height="194"
                                 image={`../images/${photo.file_name}`}
                                 alt=""
                             />
@@ -52,7 +52,7 @@ class UserPhotos extends React.Component {
                                     {/*{console.log(`<SelfComment comment = ${photo.comments.comment}/>`)}*/}
                                 </Typography>
                             </CardContent>
-                            <Comments comments = {photo.comments} onClick={() => this.props.onClick(photo.comments.user)}/>
+                            <Comments comments = {photo.comments} onClick={(user) => this.props.onClick(user)}/>
                         </Card>
                     );
                 })}</div>
@@ -68,10 +68,8 @@ function Comments(props){
         props.comments.map((comment) => {
             return(
             <CardContent>
-                <Button  onClick={props.onClick}>
-                    <Link to={`/users/${comment.user._id}`}>
-                        {`${comment.user.first_name} ${comment.user.last_name}`}
-                    </Link>
+                <Button component={Link} to={`/users/${comment.user._id}`} onClick={() => props.onClick(comment.user)}>
+                    {`${comment.user.first_name} ${comment.user.last_name}`}
                 </Button>
 
                 <Typography paragraph>
