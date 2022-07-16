@@ -1,3 +1,4 @@
+
 var Promise = require("Promise");
 
 /**
@@ -19,9 +20,35 @@ function fetchModel(url) {
   return new Promise(function(resolve, reject) {
       console.log(url);
       setTimeout(() => reject({status: 501, statusText: "Not Implemented"}),0);
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = () => {
+          var DONE = 4;
+          var OK = 200;
+          if(xhr.readyState === DONE) {
+              if(xhr.status === OK) {
+                  resolve({data: JSON.parse(xhr.responseText)});
+              } else{
+                  reject({status: xhr.status, statusText: xhr.statusText});
+              }
+          }
+      };
+      xhr.open("GET", url, true);
+      xhr.send();
+
+
       // On Success return:
       // resolve({data: getResponseObject});
   });
 }
-
+// function xhrHandler(resolve, reject){
+//     var DONE = 4;
+//     var OK = 200;
+//     if(xhr.readyState === DONE) {
+//         if(this.status === OK) {
+//             resolve({data: JSON.parse(this.responseText)});
+//         } else{
+//             reject({status: this.status, statusText: this.statusText});
+//         }
+//     }
+// }
 export default fetchModel;

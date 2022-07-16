@@ -1,14 +1,11 @@
 import React from 'react';
 import {
-    Avatar, Button,
+    Button,
     Card,
-    CardActions, CardContent, CardHeader, CardMedia,
-    ImageList, ImageListItem, List, ListItem, ListItemText,
+    CardContent, CardHeader, CardMedia,
     Typography
 } from '@material-ui/core';
 import './userPhotos.css';
-import {Comment, ExpandMore, SportsHockey} from "@material-ui/icons";
-import {red} from "@material-ui/core/colors";
 import {Link} from "react-router-dom";
 //TODO: How to combine with link and button A:has be coped. use Button with component={Link}
 //TODO: How to remove the outer div, which will worse the experience of surfing website
@@ -30,7 +27,7 @@ class UserPhotos extends React.Component {
             <div>
                 {photos.map((photo) => {
                     return (
-                        <Card sx={{maxWidth: 345}}>
+                        <Card sx={{maxWidth: 345}} key={photo.id}>
                             <CardHeader
                                 // avatar={
                                 //     <Avatar component={Button} sx={{bgcolor: red[500]}} aria-label="recipe">
@@ -55,7 +52,8 @@ class UserPhotos extends React.Component {
                             <Comments comments = {photo.comments} onClick={(user) => this.props.onClick(user)}/>
                         </Card>
                     );
-                })}</div>
+                })}
+            </div>
         ) : <div></div>;
         return retHtml;
     }
@@ -67,7 +65,7 @@ function Comments(props){
     return props.comments?(
         props.comments.map((comment) => {
             return(
-            <CardContent>
+            <CardContent key={comment._id}>
                 <Button component={Link} to={`/users/${comment.user._id}`} onClick={() => props.onClick(comment.user)}>
                     {`${comment.user.first_name} ${comment.user.last_name}`}
                 </Button>
