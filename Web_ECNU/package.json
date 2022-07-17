@@ -2,7 +2,9 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "date-utils": "^1.2.21",
+    "express": "^4.18.1",
     "iconv-lite": "^0.6.3",
+    "nodejs-websocket": "^1.7.2",
     "request": "^2.88.2"
   }
 }

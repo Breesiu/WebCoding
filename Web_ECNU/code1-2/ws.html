@@ -28,7 +28,7 @@
                 // 接收服务器的消息
             ws.onmessage = function(e) {
                 let message = "message:" + e.data + "";
-                //console.log(message);
+                console.log(message);
                 document.getElementById('result').innerHTML = message + '<br>';
             }
         }
