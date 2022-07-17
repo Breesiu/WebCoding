@@ -1,0 +1,7 @@
+{
+  "name": "package1",
+  "version": "1.0.0",
+  "main": "./lib/4.2.js",
+  "dependencies": {
+  }
+}
