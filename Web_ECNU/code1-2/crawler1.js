@@ -59,6 +59,9 @@ request(seedURL, function(err, res, body) { //读取种子页面
             //得到具体新闻url
             var href = "";
             href = $(e).attr("href");
+            if(href === undefined) return;
+            // console.log(href);
+            // if(href === undefined) return;
             if (href.toLowerCase().indexOf('http://') >= 0) myURL = href; //http://开头的
             else if (href.startsWith('//')) myURL = 'http:' + href; ////开头的
             else myURL = seedURL.substr(0, seedURL.lastIndexOf('/') + 1) + href; //其他
@@ -101,6 +104,7 @@ function newsGet(myURL) { //读取新闻页面
 
         if (date_format != "") fetch.publish_date = eval(date_format); //刊登日期   
         console.log('date: ' + fetch.publish_date);
+        if(!fetch.publish_date) return;
         fetch.publish_date = regExp.exec(fetch.publish_date)[0];
         fetch.publish_date = fetch.publish_date.replace('年', '-')
         fetch.publish_date = fetch.publish_date.replace('月', '-')
