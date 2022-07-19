@@ -8,6 +8,9 @@ app.get('/7.03.html', function(req, res) {
 app.get('/7.04.html', function(req, res) {
     res.sendFile(__dirname + "/" + "7.04.html");
 })
+app.get('/search.html', function(req, res) {
+    res.sendFile(__dirname + "/" + "search.html");
+})
 app.get('/process_get', function(req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html;charset=utf-8' }); //设置res编码为utf-8
     //sql字符串和参数
