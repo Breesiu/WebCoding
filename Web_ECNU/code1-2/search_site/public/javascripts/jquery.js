@@ -1,4 +1,5 @@
-'use strict'
+'use strict';
+// var echartsData = require('/echartsData.js');
 // var headLineSelector =  $(".headLine");
 // var dataTableSelector =  $(".dataTable");
 // var selectBoxSelector =  $(".selectBox");
@@ -23,6 +24,7 @@ $(document).ready(function () {
     var page = 1;
     var pageMax = 1;
     var dataGlobal;
+    newTabEchart();
     $("input:button").click(function () {
         page = 1;
         $.get(`/process_get?title=${$("input:text").val()}&source_name=${$("input[name='source_text']").val()}`, function (data) {
@@ -31,8 +33,12 @@ $(document).ready(function () {
             $(".headLine").empty();
             $(".dataTable").empty();
             $(".selectBox").empty();
+            $(".newTabEcharts").remove();
+
             // $(".headLine").append("sda");
             $(".headLine").append(headline);
+
+            echartsData(data);
             console.log(data);
             pageMax = parseInt(data.length / 10) + 1;
             dataGlobal = data;

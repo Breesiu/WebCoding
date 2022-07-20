@@ -6,11 +6,33 @@ body {
 a {
   color: #00B7FF;
 }
+.main{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+}
+.head{
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
 .cardLayout {
   /*display: table*/
-  width: 60%;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  /*width: 60%;*/
   margin: 10px 0px;
   border: solid beige;
+
+}
+.newTabEcharts{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  z-index: 1;
 
 }
 .dataTable{
@@ -55,6 +77,13 @@ a {
 }
 .selectBox {
 
+}
+
+.echarts{
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 5;
 }
 
 .dropdown{
