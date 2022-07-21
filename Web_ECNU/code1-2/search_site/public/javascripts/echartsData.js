@@ -2,7 +2,7 @@
 // import * as echarts from 'echarts';
 
 
-function echartsData(Data) {
+function echartsData(Data, titleKeyword) {
     var dom = document.querySelector(".echarts");  //TODO byID
     var myChart = echarts.init(dom);
     var app = {};
@@ -27,7 +27,7 @@ function echartsData(Data) {
     // 初始 option
     option = {
         title: {
-            text: '关键词热度图'
+            text: `标题关键词:${titleKeyword} 热度图`
         },
         tooltip: {},
         legend: {

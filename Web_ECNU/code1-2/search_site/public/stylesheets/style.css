@@ -12,9 +12,14 @@ a {
   grid-gap: 20px;
   grid-auto-rows: minmax(100px, auto);
 }
-.head{
+.header{
   grid-row-start: 1;
   grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+.form{
+  display: flex;
 }
 .cardLayout {
   /*display: table*/
@@ -56,7 +61,7 @@ a {
 }
 .headLineElement{
   border: 1px solid #f0f0f0;
-  width: 20%;
+  width: 16.6%;
   height: 50px;
   font-size: 14px;
   text-align: center;
@@ -65,7 +70,8 @@ a {
 .element{
   word-wrap: break-word;
   font-size: 1px;
-  border-bottom: 1px solid #f0f0f0;  width: 20%;
+  border-bottom: 1px solid #f0f0f0;
+  width: 16.6%;
   /*height: 50px;*/
   text-align: center;
   /*line-height: 50px;*/
