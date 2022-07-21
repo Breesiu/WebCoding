@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/echartsData.js"></script>
+    <script src="/javascripts/newTabEchart.js"></script>
+    <script src="/javascripts/echartsWordCloud.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css"/>
+<!--    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>-->
+
+</header>
+
+<body>
+<div class="main">
+    <div class="header">
+        <form class="form">
+            标题:<input type="text" name="title_text">
+            来源:<input type="text" name="source_text">
+            <input class="form-submit" type="button" value="查询">
+        </form>
+    </div>
+    <div class="cardLayout">
+        <div class="headLine"></div>
+        <div class="dataTable">
+
+        </div>
+        <div class="navi">
+            <div class="arrows prev">&lt;</div>
+            <div class="selectBox"></div>
+            <div class="arrows next">&gt;</div>
+        </div>
+    </div>
+    <div class="echarts"></div>
+    <div class="newTabEcharts"></div>
+</div>
+</body>
+
+</html>
